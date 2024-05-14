@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  --font-s: 1.6rem;
+  --hue: 250;
+  --text-dark: #090039;
+  --text-dark-accent: #7158ef;
+  --text-dark-gray: rgba(10, 0, 57, 0.64);
+  --text-light: #fff;
+  --text-light-accent: #bbb3e5;
+  --text-light-gray: rgba(255, 255, 255, 0.64);
+  --bg-light: hsl(var(--hue), 83%, 95%);
+  --bg-dark: hsl(var(--hue), 22%, 20%);
+}
+
+html,
+body {
+  background: var(--bg-dark);
+
+  font-family: "Epilogue", sans-serif;
+  font-size: var(--font-s);
+  width: 100%;
+  height: 100%;
+}
+
+div.page {
+  padding-inline: 2.3rem;
+  max-width: 33rem;
+  margin: 0 auto;
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+
+  padding-bottom: 10rem;
+
+  animation: downTop 700ms 350ms backwards;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  margin-block: 10.6rem 8rem;
+  text-align: center;
+  animation-name: topDown;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+header h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  font-weight: 400;
+  line-height: 200%;
+  color: var(--text-light-accent);
+}
+header h1 {
+  margin-top: 1.7rem;
+
+  line-height: 120%;
+  font-size: clamp(4rem, 2rem + 6.4vw, 5.6rem);
+  font-weight: 800;
+  color: var(--text-light);
+}
+
+div.card {
+  position: relative;
+  transition: all 0.3s;
+}
+
+div.card img {
+  border-radius: 6px;
+  object-fit: cover;
+  height: 41.6rem;
+}
+
+div.card h2 {
+  position: absolute;
+  bottom: 5.1rem;
+  left: 2.8rem;
+  font-size: 4rem;
+  text-align: left;
+  color: var(--text-light);
+  display: grid;
+  gap: 2.3rem;
+  transition: 0.3s;
+}
+
+div.card p span {
+  background: var(--text-light);
+  padding-inline: 1.6rem;
+  padding-block: 1.1rem;
+  border-radius: 1.9rem;
+  font-size: 1.6rem;
+  line-height: 200%;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+div.card:hover h2 {
+  bottom: 15.1rem;
+  left: 9.8rem;
+  text-align: center;
+}
+
+div.card:nth-child(3):hover h2 {
+  left: 6rem;
+}
+
+div.card:hover {
+  transform: scale(0.9);
+  filter: grayscale(50%);
+}
+
+@keyframes topDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 600px) {
+  div.page {
+    max-width: 117rem;
+    padding: 0 5rem;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  header h1 {
+    margin-top: 1.7rem;
+
+    font-size: clamp(4rem, 2rem + 6.4vw, 5.6rem);
+  }
+}
+
+@media (min-width: 800px) {
+  main {
+    grid-template-columns: 4fr 2fr 4fr;
+    grid-template-areas:
+      "A B B"
+      "C C D";
+  }
+
+  main div.card:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div.card:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div.card:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div.card:nth-child(4) {
+    grid-area: D;
+  }
+
+
+div.card:hover h2 {
+  left: 9.8rem;
+}
+
+div.card:nth-child(1):hover h2 {
+  left: 15rem;
+}
+div.card:nth-child(2):hover h2 {
+  left: 23rem;
+}
+div.card:nth-child(4):hover h2 {
+  left: 15rem;
+}
+div.card:nth-child(3):hover h2 {
+  left: 23rem;
+}
+
+}

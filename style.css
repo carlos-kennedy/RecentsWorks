@@ -30,7 +30,7 @@ body {
 
 div.page {
   padding-inline: 2.3rem;
-  max-width: 33rem;
+  max-width: clamp(33rem, -37.7368rem + 353.6842vw, 117rem);
   margin: 0 auto;
 }
 
@@ -86,7 +86,7 @@ div.card h2 {
   position: absolute;
   bottom: 5.1rem;
   left: 2.8rem;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, -1.25rem + 12vw, 4rem);
   text-align: left;
   color: var(--text-light);
   display: grid;
@@ -112,7 +112,7 @@ div.card:hover h2 {
 }
 
 div.card:nth-child(3):hover h2 {
-  left: 6rem;
+  left: 8rem;
 }
 
 div.card:hover {
@@ -147,11 +147,6 @@ div.card:hover {
 }
 
 @media (min-width: 600px) {
-  div.page {
-    max-width: 117rem;
-    padding: 0 5rem;
-  }
-
   main {
     grid-template-columns: 1fr 1fr;
   }
@@ -187,22 +182,20 @@ div.card:hover {
     grid-area: D;
   }
 
+  div.card:hover h2 {
+    left: 9.8rem;
+  }
 
-div.card:hover h2 {
-  left: 9.8rem;
-}
-
-div.card:nth-child(1):hover h2 {
-  left: 15rem;
-}
-div.card:nth-child(2):hover h2 {
-  left: 23rem;
-}
-div.card:nth-child(4):hover h2 {
-  left: 15rem;
-}
-div.card:nth-child(3):hover h2 {
-  left: 23rem;
-}
-
+  div.card:nth-child(1):hover h2 {
+    left: 15rem;
+  }
+  div.card:nth-child(2):hover h2 {
+    left: 23rem;
+  }
+  div.card:nth-child(4):hover h2 {
+    left: 15rem;
+  }
+  div.card:nth-child(3):hover h2 {
+    left: 23rem;
+  }
 }
